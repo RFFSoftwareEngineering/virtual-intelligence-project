@@ -18,6 +18,7 @@ def main():
         mic = sr.Recognizer()
         mic.pause_threshold = 3.4
         with sr.Microphone() as source:
+            mic.adjust_for_ambient_noise(source)
             source.SAMPLE_WIDTH = 2
             print("speak...")
             audio  = mic.listen(source)
