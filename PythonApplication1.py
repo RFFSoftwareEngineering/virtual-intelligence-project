@@ -42,6 +42,15 @@ def main():
                 edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
                 webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
                 webbrowser.get("edge").open("www.google.com")
+            elif "fechar desligue pare exit" and "assistente" in query:
+                tts0 = gTTS(text="finishing assistant execution proccess", lang="en")
+                if os.path.isfile("said2.mp3") == True:
+                    playsound("said2.mp3")
+                else:
+                    tts0.save("said2.mp3")
+                    playsound("said2.mp3")
+                print("saindo...")
+                os._exit(1)                                    
             else:
                 main()
         else:
@@ -49,3 +58,4 @@ def main():
 
 main()
 
+sys.exit()
