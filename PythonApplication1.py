@@ -34,7 +34,6 @@ def main():
         except sr.RequestError as e:
             print("Could not request results from Google Speech Recognition service; {0}".format(e))
                            
-#OBS: FAZER MAIS UM ELIF COM O COMANDO LONGO DO GOOGLE...            
 #space for functions of the assistant:
 
         if len(comando) > 0:
