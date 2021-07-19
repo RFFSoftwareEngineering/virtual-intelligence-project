@@ -87,6 +87,7 @@ def main():
                     pyautogui.moveTo(433, 387)
                     time.sleep(0.7)
                     pyautogui.click()
+                    time.sleep(3)
                 elif "apague acenda luz luzes" and "jardim" in query:
                     if os.path.isfile("said6.mp3") == True:
                         playsound("said6.mp3")
@@ -102,6 +103,7 @@ def main():
                     pyautogui.moveTo(427, 501)
                     time.sleep(0.7)
                     pyautogui.click()
+                    time.sleep(3)
                 elif "fechar desligue pare exit" and "assistente" in query:
                     tts0 = gTTS(text="finishing assistant execution proccess", lang="en")
                     if os.path.isfile("said2.mp3") == True:
@@ -113,7 +115,7 @@ def main():
                     os._exit(1) 
                 else:
                     main()
-            elif len(query) > 25:
+            elif len(query) > 30:
                 print("modo BigQuery initializing...")
                 print(f"Você disse {query}")
                 if "ola oi tudo bem pesquise para mim no como esta o clima hoje" and "google" in query:
@@ -133,7 +135,7 @@ def main():
                     pyautogui.write(unidecode(sub1bigquery), interval=0.05)
                     pyautogui.press("enter")
                 else:
-                    print("gone to else and returned to main()")
+                    print("none function reconized...returning to main function...")
                     main()
             else:
                 main()
