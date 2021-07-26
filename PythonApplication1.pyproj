@@ -27,6 +27,15 @@
   <ItemGroup>
     <InterpreterReference Include="Global|VisualStudio|TTSenv" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="said.mp3" />
+    <Content Include="said1.mp3" />
+    <Content Include="said2.mp3" />
+    <Content Include="said3.mp3" />
+    <Content Include="said4.mp3" />
+    <Content Include="said5.mp3" />
+    <Content Include="said6.mp3" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in
