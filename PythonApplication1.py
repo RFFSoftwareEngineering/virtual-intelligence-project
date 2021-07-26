@@ -1,5 +1,5 @@
 from gtts import gTTS
-from playsound import *
+from playsound import playsound
 import speech_recognition as sr
 import os
 from os import path
@@ -11,17 +11,13 @@ from unidecode import unidecode
 
 
 tts = gTTS(text="Hello, i am Ídi, initializing complete..", lang="en")
+tts.save("said.mp3")
 
-if os.path.isfile("said.mp3") == True:
-    playsound("said.mp3")
-else:
-    tts.save("said.mp3")
-    playsound("said.mp3")
+playsound("said.mp3")
 
 
 def main():
     while True:
-        time.sleep(1)
         mic = sr.Recognizer()
         mic.pause_threshold = 3.4
         with sr.Microphone() as source:
@@ -48,11 +44,10 @@ def main():
                     edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
                     webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
                     webbrowser.get("edge").open("www.google.com")
-                    time.sleep(1)
+                    tts1 = gTTS(text="what you want me to search for? Mister Creator", lang="en")
                     if os.path.isfile("said3.mp3") == True:
                         playsound("said3.mp3")
                     else:
-                        tts1 = gTTS(text="what you want me to search for? Mister Creator", lang="en")
                         tts1.save("said3.mp3")
                         playsound("said3.mp3")
                     mic = sr.Recognizer()
@@ -77,22 +72,22 @@ def main():
                         pyautogui.press("enter")
                     else:
                         main()
-                elif "acenda apague luz luzes" and "garagem" in query:
-                    tts6 = gTTS(text="clicking on garage lights on our awesome automation system sir")
+                elif "apague acenda luz luzes" and "garagem" in query:
                     if os.path.isfile("said5.mp3") == True:
                         playsound("said5.mp3")
                     else:
+                        tts6 = gTTS(text="clicking on garage lights on our awesome automation system sir")
                         tts6.save("said5.mp3")
                         playsound("said5.mp3")
                     edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
                     webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
-                    webbrowser.get("edge").open("http://192.168.0.2/")
+                    webbrowser.get("edge").open("http://192.168.0.4/")
                     print("waiting the page to load...")
                     time.sleep(2)
                     pyautogui.moveTo(433, 387)
                     time.sleep(0.7)
                     pyautogui.click()
-                    main()
+                    time.sleep(3)
                 elif "apague acenda luz luzes" and "jardim" in query:
                     if os.path.isfile("said6.mp3") == True:
                         playsound("said6.mp3")
@@ -102,7 +97,7 @@ def main():
                         playsound("said6.mp3")
                     edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
                     webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
-                    webbrowser.get("edge").open("http://192.168.0.2/")
+                    webbrowser.get("edge").open("http://192.168.0.4/")
                     print("waiting the page to load...")
                     time.sleep(2)
                     pyautogui.moveTo(427, 501)
