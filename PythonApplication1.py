@@ -5,7 +5,7 @@ import os
 from os import path
 import time
 import sys
-import webbrowser
+import webbrowser #changing from webbrowser to selenium
 import pyautogui
 from unidecode import unidecode
 
