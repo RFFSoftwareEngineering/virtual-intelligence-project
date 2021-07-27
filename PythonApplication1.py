@@ -13,6 +13,7 @@ from unidecode import unidecode
 tts = gTTS(text="Hello, i am Ídi, initializing complete..", lang="en")
 tts.save("said.mp3")
 
+
 playsound("said.mp3")
 
 edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
@@ -64,15 +65,21 @@ def main():
                     print("Could not request results from Google Speech Recognition service; {0}".format(e)) 
                 if len(comando0) > 0:
                     subquery0 = comando0.lower()
-                    print(f"pesquisando: {subquery0}")
-                    pyautogui.write(unidecode(subquery0), interval=0.05)
-                    pyautogui.press("enter")
+                    if "sair nothing" or "nada" in subquery0:
+                        tts = gTTS(text="Ok..", lang="en")
+                        tts.save("said7.mp3")
+                        playsound("said7.mp3")
+                        main()
+                    else:
+                        print(f"pesquisando: {subquery0}")
+                        pyautogui.write(unidecode(subquery0), interval=0.05)
+                        pyautogui.press("enter")
                 else:
                     main()
             elif "apague acenda luz luzes" and "garagem" in query:
                 tts6 = gTTS(text="clicking on garage lights on our awesome automation system sir")
                 tts6.save("said5.mp3")
-                playsound("said5.mp3")
+                playsound("said5.mp3", block=False)
                 webbrowser.get("edge").open("http://192.168.0.2/")
                 print("waiting the page to load...")
                 time.sleep(2)
