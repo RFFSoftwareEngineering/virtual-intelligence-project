@@ -5,7 +5,7 @@ import os
 from os import path
 import time
 import sys
-import webbrowser #changing from webbrowser to selenium
+import webbrowser
 import pyautogui
 from unidecode import unidecode
 
@@ -14,6 +14,9 @@ tts = gTTS(text="Hello, i am Ídi, initializing complete..", lang="en")
 tts.save("said.mp3")
 
 playsound("said.mp3")
+
+edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
 
 
 def main():
@@ -40,8 +43,6 @@ def main():
             query = comando.lower()
             print(comando.lower())
             if  "abra open abre" and "google" in query:
-                edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-                webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
                 webbrowser.get("edge").open("www.google.com")
                 tts1 = gTTS(text="what you want me to search for? Mister Creator", lang="en")
                 tts1.save("said3.mp3")
@@ -72,8 +73,6 @@ def main():
                 tts6 = gTTS(text="clicking on garage lights on our awesome automation system sir")
                 tts6.save("said5.mp3")
                 playsound("said5.mp3")
-                edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-                webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
                 webbrowser.get("edge").open("http://192.168.0.2/")
                 print("waiting the page to load...")
                 time.sleep(2)
@@ -85,8 +84,6 @@ def main():
                 tts7 = gTTS(text="clicking on yard's lights sir...")
                 tts7.save("said6.mp3")
                 playsound("said6.mp3")
-                edge_path = "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-                webbrowser.register("edge", None, webbrowser.BackgroundBrowser(edge_path))
                 webbrowser.get("edge").open("http://192.168.0.2/")
                 print("waiting the page to load...")
                 time.sleep(2)
