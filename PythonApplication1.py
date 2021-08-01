@@ -47,6 +47,7 @@ def main():
                 webbrowser.get("edge").open("www.google.com")
                 tts1 = gTTS(text="what you want me to search for? Mister Creator", lang="en")
                 tts1.save("said3.mp3")
+                time.sleep(0.5)
                 playsound("said3.mp3")
                 mic = sr.Recognizer()
                 mic.pause_threshold = 3.4
@@ -68,6 +69,7 @@ def main():
                     if "sair nothing" or "nada" in subquery0:
                         tts = gTTS(text="Ok..", lang="en")
                         tts.save("said7.mp3")
+                        time.sleep(0.5)
                         playsound("said7.mp3")
                         main()
                     else:
@@ -79,6 +81,7 @@ def main():
             elif "apague acenda luz luzes" and "garagem" in query:
                 tts6 = gTTS(text="clicking on garage lights on our awesome automation system sir")
                 tts6.save("said5.mp3")
+                time.sleep(0.5)
                 playsound("said5.mp3", block=False)
                 webbrowser.get("edge").open("http://192.168.0.2/")
                 print("waiting the page to load...")
@@ -90,6 +93,7 @@ def main():
             elif "apague acenda luz luzes" and "jardim" in query:
                 tts7 = gTTS(text="clicking on yard's lights sir...")
                 tts7.save("said6.mp3")
+                time.sleep(0.5)
                 playsound("said6.mp3")
                 webbrowser.get("edge").open("http://192.168.0.2/")
                 print("waiting the page to load...")
@@ -101,9 +105,10 @@ def main():
             elif "fechar desligue pare exit" and "assistente" in query:
                 tts0 = gTTS(text="finishing assistant execution proccess", lang="en")
                 tts0.save("said2.mp3")
-                playsound("said2.mp3")
-                print("saindo...")
-                os._exit(1) 
+                time.sleep(0.5)
+                playsound("said2.mp3")                
+                print("saindo...")                
+                break 
             else:
                 main()
             
@@ -111,5 +116,3 @@ def main():
             main()
 
 main()
-
-sys.exit()
